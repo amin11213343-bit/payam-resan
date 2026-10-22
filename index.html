@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>پیام‌رسان من</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Tahoma, sans-serif;
+      background: #101827;
+      color: white;
+    }
+
+    header {
+      padding: 22px;
+      background: #172338;
+      text-align: center;
+      font-size: 24px;
+      font-weight: bold;
+      border-bottom: 1px solid #34445d;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 30px auto;
+      padding: 18px;
+    }
+
+    .welcome {
+      text-align: center;
+      padding: 25px 10px;
+    }
+
+    .welcome h1 {
+      font-size: 27px;
+    }
+
+    .welcome p {
+      color: #b8c5d9;
+      line-height: 2;
+    }
+
+    .card {
+      background: #1b293e;
+      border: 1px solid #354760;
+      border-radius: 16px;
+      padding: 20px;
+      margin-top: 20px;
+    }
+
+    label {
+      display: block;
+      margin: 14px 0 8px;
+    }
+
+    input {
+      width: 100%;
+      padding: 13px;
+      border-radius: 9px;
+      border: 1px solid #475873;
+      background: #101827;
+      color: white;
+      font-size: 16px;
+    }
+
+    button {
+      width: 100%;
+      padding: 13px;
+      margin-top: 16px;
+      border: none;
+      border-radius: 9px;
+      background: #3984f6;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .note {
+      text-align: center;
+      color: #aab8cd;
+      font-size: 13px;
+      line-height: 2;
+    }
+  </style>
+</head>
+<body>
+  <header>💬 پیام‌رسان من</header>
+
+  <main class="container">
+    <section class="welcome">
+      <h1>به پیام‌رسان خودت خوش اومدی!</h1>
+      <p>
+        با دوستانت ارتباط برقرار کن و تجربه‌ای تازه از گفت‌وگو داشته باش.
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>شروع کار</h2>
+      <p>به‌زودی می‌تونی حساب بسازی و با آیدی دوستانت بهشون پیام بدی.</p>
+
+      <label for="username">آیدی دلخواه تو</label>
+      <input id="username" placeholder="مثلاً amin123">
+
+      <button onclick="showMessage()">ادامه</button>
+
+      <p id="message" class="note"></p>
+    </section>
+
+    <p class="note">
+      نسخه آزمایشی پیام‌رسان
+    </p>
+  </main>
+
+  <script>
+    function showMessage() {
+      const username = document.getElementById("username").value.trim();
+      const message = document.getElementById("message");
+
+      if (!/^[a-zA-Z0-9_]{3,20}$/.test(username)) {
+        message.textContent =
+          "آیدی باید ۳ تا ۲۰ حرف و شامل حروف انگلیسی، عدد یا _ باشد.";
+        return;
+      }
+
+      message.textContent =
+        "سلام @" + username + "! ظاهر اولیه سایت آماده است؛ ثبت‌نام واقعی هنوز راه‌اندازی نشده.";
+    }
+  </script>
+</body>
+</html>
